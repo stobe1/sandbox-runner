@@ -1,0 +1,167 @@
+:root {
+    --size: 100px;
+}
+
+.mapWrap {
+    display: block;
+}
+
+.mapBg {
+    perspective: 800px;
+    width: 1200px;
+    position: absolute;
+    bottom: -250px;
+    left: -500px;
+    height: 500px;
+    border: 1px solid #000;
+    aspect-ratio: 1;
+    transform-style: preserve-3d;
+}
+
+.perspective {
+    transform: perspective(800px) rotateY(30deg);
+    perspective: 800px;
+    perspective-origin: 50% 100px ;
+}
+
+.box {  
+    width: var(--size);
+    aspect-ratio: 1;  
+  
+    position: relative;
+    top: 50px;
+    transform-style: preserve-3d;
+    transform-origin: 50% 50% -50%;
+  }
+  
+.face {
+    position: absolute;
+    width: var(--size);
+    border: 1px solid #000;
+    box-sizing: border-box;
+    aspect-ratio: 1;
+
+    background-color: hsl(
+        39,
+        100%,
+        66%
+    );
+
+    transform-style: preserve-3d;
+}
+
+.box {  
+    animation: rotate 10s linear forwards 1;
+}
+
+.face.front {
+}
+
+.face.bottom {
+    top: 100%;
+}
+
+.face.top {
+    bottom: 100%;
+}
+
+.face.back {
+    bottom: 200%;
+}
+
+.face.right {
+    left: 100%;
+}
+
+.face.left {
+    right: 100%;
+}
+
+@keyframes rotate {
+    from {
+    }
+    to {
+        transform: rotate3d(1, 0, 0, 90deg);
+    }
+}
+
+  
+.face.front {
+}
+
+.face.bottom {
+  top: 100%;
+  transform-origin: top;
+  transform: rotateX(-90deg);
+}
+
+.face.top {
+  bottom: 100%;
+  transform-origin: bottom;
+  transform: rotateX(90deg);
+}
+
+.face.back {
+  bottom: 200%;
+  transform-origin: center 150px -50px;
+  transform: rotateX(180deg);
+}
+
+.face.right {
+  left: 100%;
+  transform-origin: left;
+  transform: rotateY(90deg);
+}
+
+.face.left {
+  right: 100%;
+  transform-origin: right;
+  transform: rotateY(-90deg);
+}
+
+
+.face {  
+  background-color: hsl(
+    39,
+    100%,
+    var(--lightness)
+  );
+}
+
+.face.front {
+  --lightness: 10%;
+}
+
+.face.bottom {
+  --lightness: 74%;
+}
+
+.face.top {
+  --lightness: 74%;
+}
+
+.face.back {
+  --lightness: 50%;
+}
+
+.face.right {
+  --lightness: 70%;
+}
+
+.face.left {
+  --lightness: 70%;
+}
+
+.cubicle {
+    height: 100px;
+    width: 100px;
+    border: 1px solid purple;
+    box-sizing: border-box;
+    position: absolute;
+    background: #333;
+    left: 0;
+    top: 0;
+
+
+}
+  
